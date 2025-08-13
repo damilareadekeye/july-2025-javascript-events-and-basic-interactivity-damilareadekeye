@@ -1,0 +1,60 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, Helvetica, Arial;
+  background: #0b1220;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: 1rem; top: 1rem; background: #22c55e; color: #0b1220; padding: 0.25rem 0.5rem; border-radius: 0.25rem; }
+.container { width: min(1100px, 92%); margin-inline: auto; }
+.site-header { background: #0f172a; border-bottom: 4px solid #22c55e; }
+.header-row { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+.actions { display: flex; gap: 0.5rem; }
+.card { background: #111827; border: 1px solid #1f2937; border-radius: 0.75rem; padding: 1rem; margin: 1rem 0; }
+.grid { display: grid; gap: 0.75rem; }
+.muted { color: #94a3b8; }
+.hidden { display: none !important; }
+.output { display: block; min-height: 2rem; padding: 0.5rem 0.75rem; border: 1px dashed #334155; border-radius: 0.5rem; }
+.btn { appearance: none; border: 1px solid #334155; background: #111827; color: #e2e8f0; padding: 0.5rem 0.875rem; border-radius: 0.5rem; cursor: pointer; }
+.btn:hover { background: #1f2937; }
+.btn--primary { background: #22c55e; color: #0b1220; border-color: #22c55e; }
+.btn--primary:hover { background: #16a34a; }
+
+.hover-box { border: 2px dashed #94a3b8; padding: 0.75rem; border-radius: 0.5rem; text-align: center; }
+.hover-box.is-active { background: #0b1220; border-color: #22c55e; }
+
+.tabs { display: flex; gap: 0.5rem; }
+.tab { background: #111827; border: 1px solid #334155; color: #e2e8f0; padding: 0.5rem 0.75rem; border-radius: 0.5rem; cursor: pointer; }
+.tab.is-active { background: #22c55e; color: #0b1220; border-color: #22c55e; }
+.tab-panels { margin-top: 0.75rem; }
+.tab-panel { display: none; }
+.tab-panel.is-active { display: block; }
+
+.counter { display: grid; gap: 0.5rem; }
+
+.faq { display: grid; gap: 0.5rem; }
+.faq__q { text-align: left; width: 100%; background: #111827; border: 1px solid #334155; color: #e2e8f0; padding: 0.5rem 0.75rem; border-radius: 0.5rem; cursor: pointer; }
+.faq__q[aria-expanded="true"] { background: #1f2937; }
+.faq__a { background: #0b1220; border: 1px dashed #334155; padding: 0.5rem 0.75rem; border-radius: 0.5rem; }
+
+label span { display: block; font-size: 0.9rem; color: #94a3b8; margin-bottom: 0.25rem; }
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%; padding: 0.5rem 0.75rem; border-radius: 0.5rem; border: 1px solid #334155; background: #0b1220; color: #e2e8f0;
+}
+.check-row { display: inline-flex; align-items: center; gap: 0.5rem; }
+.error-msg { color: #ef4444; min-height: 1.25rem; display: block; }
+
+.site-footer { border-top: 4px solid #22c55e; margin-top: 2rem; padding: 1rem 0; background: #0f172a; }
+
+/* Light theme */
+body.theme--light { background: #f8fafc; color: #0f172a; }
+body.theme--light .card { background: #ffffff; border-color: #e5e7eb; }
+body.theme--light .btn { background: #ffffff; color: #0f172a; border-color: #94a3b8; }
+body.theme--light .btn:hover { background: #f1f5f9; }
+body.theme--light input { background: #ffffff; color: #0f172a; border-color: #cbd5e1; }
+body.theme--light .faq__a, body.theme--light .output { background: #ffffff; color: #0f172a; border-color: #cbd5e1; }
+
+

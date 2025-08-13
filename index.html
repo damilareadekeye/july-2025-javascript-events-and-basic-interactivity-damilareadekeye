@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PLP 6 — Interactive Web Pages with JavaScript</title>
+    <meta name="description" content="JS events, interactive UI components, and custom form validation." />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container header-row">
+            <h1>Interactive Web — PLP 6</h1>
+            <nav aria-label="Quick actions" class="actions">
+                <button id="themeToggle" type="button" class="btn">Toggle Theme</button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="container">
+        <section class="card" aria-labelledby="events-title">
+            <h2 id="events-title">Part 1: Event Handling Basics</h2>
+            <div class="grid">
+                <div>
+                    <h3>Click to Toggle Message</h3>
+                    <button id="toggleMsgBtn" type="button" class="btn btn--primary">Show/Hide</button>
+                    <p id="clickMessage" class="muted hidden">You clicked the button! 🎉</p>
+                </div>
+
+                <div>
+                    <h3>Hover Highlight</h3>
+                    <div id="hoverBox" class="hover-box" tabindex="0" aria-describedby="hoverHelp">
+                        Hover or focus me
+                    </div>
+                    <small id="hoverHelp" class="muted">This box highlights on mouse enter and focus.</small>
+                </div>
+
+                <div>
+                    <h3>Live Text Preview (Keyboard Input)</h3>
+                    <label>
+                        <span>Type something</span>
+                        <input id="liveInput" type="text" placeholder="Hello, world!" />
+                    </label>
+                    <output id="livePreview" class="output" aria-live="polite"></output>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" aria-labelledby="interactive-title">
+            <h2 id="interactive-title">Part 2: Interactive Elements</h2>
+
+            <div class="grid">
+                <div>
+                    <h3>Tabbed Interface</h3>
+                    <div class="tabs" role="tablist" aria-label="Demo tabs">
+                        <button class="tab is-active" role="tab" aria-selected="true" aria-controls="tab-panel-1"
+                            id="tab-1">Overview</button>
+                        <button class="tab" role="tab" aria-selected="false" aria-controls="tab-panel-2"
+                            id="tab-2">Specs</button>
+                        <button class="tab" role="tab" aria-selected="false" aria-controls="tab-panel-3"
+                            id="tab-3">Reviews</button>
+                    </div>
+                    <div class="tab-panels">
+                        <div class="tab-panel is-active" role="tabpanel" id="tab-panel-1" aria-labelledby="tab-1">
+                            <p>This is the Overview tab content.</p>
+                        </div>
+                        <div class="tab-panel" role="tabpanel" id="tab-panel-2" aria-labelledby="tab-2">
+                            <ul>
+                                <li>Performance: Fast</li>
+                                <li>Battery: Long-lasting</li>
+                                <li>Build: Durable</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" role="tabpanel" id="tab-panel-3" aria-labelledby="tab-3">
+                            <p>“Works great!” — A happy user</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Counter Game</h3>
+                    <div class="counter">
+                        <div><strong>Count:</strong> <span id="countValue">0</span></div>
+                        <div class="actions">
+                            <button id="incBtn" type="button" class="btn">+1</button>
+                            <button id="decBtn" type="button" class="btn">-1</button>
+                            <button id="resetBtn" type="button" class="btn">Reset</button>
+                        </div>
+                        <p id="countHint" class="muted">Reach 10 to win! 🎯</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>FAQ (Collapsible)</h3>
+                    <div class="faq">
+                        <button class="faq__q" aria-expanded="false" aria-controls="a1" id="q1">What is this
+                            page?</button>
+                        <div class="faq__a hidden" id="a1" role="region" aria-labelledby="q1">
+                            An interactive demo built with plain JavaScript.
+                        </div>
+
+                        <button class="faq__q" aria-expanded="false" aria-controls="a2" id="q2">How does FAQ
+                            work?</button>
+                        <div class="faq__a hidden" id="a2" role="region" aria-labelledby="q2">
+                            Click a question to show or hide the answer.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" aria-labelledby="form-title">
+            <h2 id="form-title">Part 3: Custom Form Validation</h2>
+            <p>Fill out the form. We validate inputs on type and submit. No HTML5-only validation is used.</p>
+            <form id="signupForm" novalidate>
+                <div class="grid">
+                    <label>
+                        <span>Full Name</span>
+                        <input id="fullName" type="text" aria-describedby="nameErr" />
+                        <small id="nameErr" class="error-msg" aria-live="polite"></small>
+                    </label>
+
+                    <label>
+                        <span>Email</span>
+                        <input id="email" type="email" aria-describedby="emailErr" />
+                        <small id="emailErr" class="error-msg" aria-live="polite"></small>
+                    </label>
+
+                    <label>
+                        <span>Password</span>
+                        <input id="password" type="password" aria-describedby="passErr" />
+                        <small id="passErr" class="error-msg" aria-live="polite"></small>
+                    </label>
+
+                    <label>
+                        <span>Confirm Password</span>
+                        <input id="confirm" type="password" aria-describedby="confirmErr" />
+                        <small id="confirmErr" class="error-msg" aria-live="polite"></small>
+                    </label>
+
+                    <label class="check-row">
+                        <input id="terms" type="checkbox" />
+                        <span>I agree to the terms</span>
+                    </label>
+                </div>
+
+                <div class="actions">
+                    <button id="submitBtn" type="submit" class="btn btn--primary">Create Account</button>
+                </div>
+                <output id="formStatus" class="output" aria-live="polite"></output>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <small>&copy; <time datetime="2025">2025</time> Interactive Web Demo</small>
+        </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+</body>
+
+</html>
